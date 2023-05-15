@@ -1,97 +1,101 @@
 type GeneralConfigType = {
+    name: string;
+    description: string;
+    defaultLocale: import('@i18n').Locales;
+    ownerId: string;
+    timezone: string;
+    automaticUploadImagesToImgur: boolean;
 
-    name: string
-    description: string
-    defaultLocale: import('@i18n').Locales
-    ownerId: string
-    timezone: string
-    automaticUploadImagesToImgur: boolean
-    
-    simpleCommandsPrefix: string
-    automaticDeferring: boolean
+    simpleCommandsPrefix: string;
+    automaticDeferring: boolean;
 
     links: {
-		invite: string
-		supportServer: string
-		gitRemoteRepo: string
-	}
+        invite: string;
+        supportServer: string;
+        gitRemoteRepo: string;
+    };
 
-    devs: string[]
+    devs: string[];
 
     eval: {
-        name: string
-        onlyOwner: boolean
-    }
+        name: string;
+        onlyOwner: boolean;
+    };
 
     activities: {
-        text: string
-        type: "PLAYING" | "STREAMING" | "LISTENING" | "WATCHING" | "CUSTOM" | "COMPETING"
-    }[]
-
-}
+        text: string;
+        type:
+            | 'PLAYING'
+            | 'STREAMING'
+            | 'LISTENING'
+            | 'WATCHING'
+            | 'CUSTOM'
+            | 'COMPETING';
+    }[];
+};
 
 type DatabaseConfigType = {
-    
-    path: `${string}/` 
+    path: `${string}/`;
 
     backup: {
-        enabled: boolean
-        path: `${string}/`
-    }
-}
+        enabled: boolean;
+        path: `${string}/`;
+    };
+};
 
 type LogsConfigType = {
-
-    debug: boolean
+    debug: boolean;
 
     interaction: {
-        file: boolean
-        console: boolean
-        channel: string | null
+        file: boolean;
+        console: boolean;
+        channel: string | null;
 
-        exclude: InteractionsConstants[]
-    }
+        exclude: InteractionsConstants[];
+    };
 
     simpleCommand: {
-        file: boolean
-        console: boolean
-        channel: string | null
-    }
+        file: boolean;
+        console: boolean;
+        channel: string | null;
+    };
 
     newUser: {
-        file: boolean
-        console: boolean
-        channel: string | null
-    }
+        file: boolean;
+        console: boolean;
+        channel: string | null;
+    };
 
     guild: {
-        file: boolean
-        console: boolean
-        channel: string | null
-    }
+        file: boolean;
+        console: boolean;
+        channel: string | null;
+    };
 
     error: {
-        file: boolean
-        console: boolean
-        channel: string | null
-    }
-}
+        file: boolean;
+        console: boolean;
+        channel: string | null;
+    };
+};
 
 type StatsConfigType = {
-
     interaction: {
-        
-        exclude: InteractionsConstants[]
-    }
-}
+        exclude: InteractionsConstants[];
+    };
+};
 
 type APIConfigType = {
-
-    enabled: boolean
-    port: number
-}
+    enabled: boolean;
+    port: number;
+};
 
 type WebsocketConfigType = {
+    enabled: boolean;
+};
 
-    enabled: boolean
-}
+type OpenAIConfigType = {
+    endpoint: string;
+    model: string;
+    max_tokens: number;
+};
